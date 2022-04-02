@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	stack_t *head = NULL;
 	variable_t var_important;
 	size_t n;
-	int line;
+	long int line;
 	void (*f)(stack_t **stack, unsigned int line_number);
 
 	
@@ -43,7 +43,8 @@ int main(int argc, char **argv)
 	{
 		var_important.nl++;
 		line = getline(&(var_important.buffer), &n, var_important.fd);
-
+		if (line == EOF)
+			break;
 		var_important.tokens[0] = strtok(var_important.buffer, " \n");
 		var_important.tokens[1] = strtok(NULL, " \n");
 		
@@ -67,5 +68,7 @@ int main(int argc, char **argv)
 		if (f != NULL)
 			f(&head, (unsigned int)var_important.value);
 	}
+
+	return (0);
 }
 
