@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * main - main function 
+ * main - main function
  * @argc: number of elements
  * @argv: array of elements
  * Return: int
@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 	long int line;
 	void (*f)(stack_t **stack, unsigned int line_number);
 
-	
 	var_important.nl = 0;
 	var_important.buffer = NULL;
 
@@ -30,7 +29,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	var_important.tokens = malloc(sizeof(char *) *5);
+	var_important.tokens = malloc(sizeof(char *) * 5);
 
 	if (var_important.tokens == NULL)
 	{
@@ -47,7 +46,7 @@ int main(int argc, char **argv)
 			break;
 		var_important.tokens[0] = strtok(var_important.buffer, " \n");
 		var_important.tokens[1] = strtok(NULL, " \n");
-		
+
 		if (!var_important.tokens[0])
 			break;
 
@@ -62,7 +61,7 @@ int main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 		}
-		
+
 		f = matcher(&var_important);
 
 		if (f != NULL)
@@ -71,4 +70,3 @@ int main(int argc, char **argv)
 
 	return (0);
 }
-

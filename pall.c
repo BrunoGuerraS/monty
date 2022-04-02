@@ -1,8 +1,9 @@
 #include "monty.h"
-/*
- * _pall - print all node's value
+/**
+ * pall - print all node's value
  * @stack: double p
- * @line_number:
+ * @line_number: value
+ * Return: nothing
  */
 void pall(stack_t **stack, unsigned int line_number)
 {

@@ -12,7 +12,7 @@ int sdig(char *s)
 	{
 		if (!(isdigit(s[i])))
 		{
-			return(0);
+			return (0);
 		}
 		i++;
 	}

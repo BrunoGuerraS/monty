@@ -1,9 +1,9 @@
 #include "monty.h"
-/*
- * _push - if is the first node create it or add
- * @opcode: option
- * @value: int value
- * Return: nothing 
+/**
+ * push - if is the first node create it or add
+ * @stack: stack
+ * @line_number: value
+ * Return: nothing
  */
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number)
 	node->n = line_number;
 	node->next = *stack;
 	node->prev = NULL;
-	
+
 	*stack = node;
 
 }
