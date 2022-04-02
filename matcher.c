@@ -5,7 +5,7 @@
  * @ln: line number
  * Return: Nothing
  */
-void (*matcher(variable_t *gb_var))(stack_node **stack, unsigned int line_number)
+void (*matcher(variable_t *gb_var))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 

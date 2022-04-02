@@ -7,11 +7,11 @@
  */
 int main(int argc, char **argv)
 {
-	stack_node *head = NULL;
+	stack_t *head = NULL;
 	variable_t var_important;
 	size_t n;
 	int line;
-	void (*f)(stack_node **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 
 	
 	var_important.nl = 0;

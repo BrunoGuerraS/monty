@@ -5,14 +5,14 @@
  * @value: int value
  * Return: nothing 
  */
-void push(stack_node **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_node *node;
+	stack_t *node;
 
 	if (!stack)
 		fprintf(stderr, "el head esta vacio");
 
-	node = malloc(sizeof(stack_node));
+	node = malloc(sizeof(stack_t));
 
 	if (*stack)
 		(*stack)->prev = node;
