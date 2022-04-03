@@ -12,7 +12,9 @@ int sdig(char *s)
 	{
 		if (!(isdigit(s[i])))
 		{
-			return (0);
+			fprintf(stderr, "L%d: usage: push integer\n", var_gb.nl);
+			fclose(var_gb.fd);
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}

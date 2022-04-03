@@ -13,26 +13,22 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-
-extern FILE *fd;
 /**
  * struct variable_s - global variables
  * @int: line number
  * @fd: pointer to file
- * 
  * Description: variables global
  */
-
 typedef struct variable_s
 {
 	int nl;
 	FILE *fd;
-        char **tokens;
+	char **tokens;
         char *buffer;
         int value;
 } variable_t;
 
-
+extern variable_t var_gb;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
