@@ -15,8 +15,11 @@
 
 /**
  * struct variable_s - global variables
- * @int: line number
+ * @nl: line number
  * @fd: pointer to file
+ * @tokens: buffer to tokens
+ * @buffer: container lines of file
+ * @value: value of int
  * Description: variables global
  */
 typedef struct variable_s
@@ -24,8 +27,8 @@ typedef struct variable_s
 	int nl;
 	FILE *fd;
 	char **tokens;
-        char *buffer;
-        int value;
+	char *buffer;
+	int value;
 } variable_t;
 
 extern variable_t var_gb;
@@ -40,9 +43,9 @@ extern variable_t var_gb;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -55,8 +58,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void (*matcher(variable_t *gb_var))(stack_t **stack, unsigned int line_number);
